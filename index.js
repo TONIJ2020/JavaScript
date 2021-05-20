@@ -18,7 +18,7 @@ function convertFahrToCelsius(Fahr) {
 }
 
 console.log('CONVERSION OF TEMPERATURE FROM FAHRENHEIT TO DEGREES CELSIUS');
-console.log('..............................................................')
+console.log('============================================================')
 console.log('')
 convertFahrToCelsius(0);
 convertFahrToCelsius("0");
@@ -29,33 +29,34 @@ convertFahrToCelsius("32");
 
 console.log('')
 console.log('*****************************************************************************************************************');
-console.log('/===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/ /===/');
 console.log('*****************************************************************************************************************');
 console.log('')
 
 
 function checkYuGiOh(n) {
-    const numbers = Array.from({ length: n }, (_, n) => n + 1);
-    for (var n = 1; n <= numbers.length; n++) {
-        if (n % 2 === 0 && n % 3 === 0 && n % 5 === 0) {
-            console.log("yu-gi-oh");
-        } else if (n % 2 === 0 && n % 3 === 0) {
-            console.log("yu-gi");
-        } else if (n % 3 === 0 && n % 5 === 0) {
-            console.log("gi-oh");
-        } else if (n % 2 === 0 && n % 5 === 0) {
-            console.log("yu-oh");
-        } else if (n % 2 === 0) {
-            console.log("yu");
-        } else if (n % 3 === 0) {
-            console.log("gi");
-        } else if (n % 5 === 0) {
-            console.log("oh");
-        } else if (n === 'string') {
-            console.log("Invalid parameter: " + JSON.stringify(n));
-        } else {
-            console.log(n);
+    var numbers = Array.from({ length: n }, (_, n) => n + 1);
+    if ((typeof(n) == "number")) {
+        for (var n = 1; n <= numbers.length; n++) {
+            if (n % 2 === 0 && n % 3 === 0 && n % 5 === 0) {
+                console.log("yu-gi-oh");
+            } else if (n % 2 === 0 && n % 3 === 0) {
+                console.log("yu-gi");
+            } else if (n % 3 === 0 && n % 5 === 0) {
+                console.log("gi-oh");
+            } else if (n % 2 === 0 && n % 5 === 0) {
+                console.log("yu-oh");
+            } else if (n % 2 === 0) {
+                console.log("yu");
+            } else if (n % 3 === 0) {
+                console.log("gi");
+            } else if (n % 5 === 0) {
+                console.log("oh");
+            } else {
+                console.log(n);
+            }
         }
+    } else {
+        console.log("Invalid parameter: " + JSON.stringify(n));
     }
-}
+};
 checkYuGiOh(5);
