@@ -17,8 +17,10 @@ function convertFahrToCelsius(Fahr) {
     }
 }
 
+console.log('                        QUESTION (1)                        ');
+console.log('');
 console.log('CONVERSION OF TEMPERATURE FROM FAHRENHEIT TO DEGREES CELSIUS');
-console.log('============================================================')
+console.log('============================================================');
 console.log('')
 convertFahrToCelsius(0);
 convertFahrToCelsius("0");
@@ -27,37 +29,66 @@ convertFahrToCelsius({ "temp": 0 });
 convertFahrToCelsius("Meat");
 convertFahrToCelsius("32");
 
-console.log('')
+console.log('');
+console.log('');
 console.log('*****************************************************************************************************************');
 console.log('*****************************************************************************************************************');
-console.log('')
+console.log('');
+console.log('');
+console.log('');
 
 
-function checkYuGiOh(n) {
-    var numbers = Array.from({ length: n }, (_, n) => n + 1);
-    if ((typeof(n) == "number")) {
-        for (var n = 1; n <= numbers.length; n++) {
-            if (n % 2 === 0 && n % 3 === 0 && n % 5 === 0) {
-                console.log("yu-gi-oh");
-            } else if (n % 2 === 0 && n % 3 === 0) {
-                console.log("yu-gi");
-            } else if (n % 3 === 0 && n % 5 === 0) {
-                console.log("gi-oh");
-            } else if (n % 2 === 0 && n % 5 === 0) {
-                console.log("yu-oh");
-            } else if (n % 2 === 0) {
-                console.log("yu");
-            } else if (n % 3 === 0) {
-                console.log("gi");
-            } else if (n % 5 === 0) {
-                console.log("oh");
-            } else {
-                console.log(n);
-            }
+console.log('                                             QUESTION (2)                                           ');
+console.log('');
+console.log('CREATION OF CHECKYUGIOH FUNCTION THAT RETURNS ARRAYS WITH MULTIPLES OF 2, 3, 5 REPLACED WITH STRINGS');
+console.log('====================================================================================================');
+const checkYuGiOh = (n) => {
+    var n;
+    if (isNaN(n) == true) {
+        if (Array.isArray(n) == true) {
+            console.log("Invalid parameter: " + JSON.stringify(n));
+            return n;
+        } else if (typeof(n) == "object") {
+            console.log("Invalid paramter: " + JSON.stringify(n));
+            return n;
+        } else {
+            console.log("Invalid paramter: " + JSON.stringify(n));
+            return n;
         }
     } else {
-        console.log("Invalid parameter: " + JSON.stringify(n));
+        var ans;
+        ans = create(n);
+
+        function create(n) {
+            var n;
+            var arr = [];
+            for (i = 1; i <= n; i++) {
+                if (i % 2 == 0 && i % 3 == 0 && i % 5 == 0) {
+                    arr.push("yu-gi-oh");
+                } else if (i % 2 == 0 && i % 3 == 0) {
+                    arr.push("yu-gi");
+                } else if (i % 2 == 0 && i % 5 == 0) {
+                    arr.push("yu-oh");
+                } else if (i % 3 == 0 && i % 5 == 0) {
+                    arr.push("gi-oh");
+                } else if (i % 5 == 0) {
+                    arr.push("oh");
+                } else if (i % 3 == 0) {
+                    arr.push("gi");
+                } else if (i % 2 == 0) {
+                    arr.push("yu");
+                } else {
+                    arr.push(i);
+                }
+                console.log(arr);
+            }
+            return arr;
+        }
+        return ans;
     }
-};
-checkYuGiOh(5);
-checkYuGiOh("fizzbuzz is meh");
+}
+checkYuGiOh(10);
+console.log('');
+checkYuGiOh("5");
+console.log('');
+checkYuGiOh('fizzbuzz is meh');
