@@ -60,3 +60,4 @@ function checkYuGiOh(n) {
     }
 };
 checkYuGiOh(5);
+checkYuGiOh("fizzbuzz is meh");
